@@ -8,7 +8,8 @@ const initialState = {
       nameGoods: 'Adidas 1000',
       goodsDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       cost: 125,
-      sex: 'men'
+      sex: 'men',
+      counter: 1,
     },
     {
       id: 2,
@@ -16,7 +17,8 @@ const initialState = {
       nameGoods: 'Nike ligth',
       goodsDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       cost: 130,
-      sex: 'women'
+      sex: 'women',
+      counter: 1,
     },
   ]
 }
@@ -25,11 +27,22 @@ export const goodsSlice = createSlice({
   name: 'goods',
   initialState,
   reducers: {
+    counterDecrement: (state, { payload }) => {
+      let goods = state.goods.find(item => item.id === payload);
+      if (goods.counter !== 1) {
+        goods.counter -= 1
+      } else goods.counter = 1
+    },
+
+    counterIncrement: (state, {payload}) => {
+      let goods = state.goods.find(item => item.id === payload);
+      goods.counter +=1
+    }
 
   },
 })
 
 
-export const { } = goodsSlice.actions
+export const { counterDecrement, counterIncrement } = goodsSlice.actions
 
 export default goodsSlice.reducer

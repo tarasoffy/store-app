@@ -8,7 +8,7 @@ import Man from './screens/Men'
 import Women from './screens/Women'
 import About from './screens/About'
 import Contact from './screens/Contacts'
-import HomePage from './screens/Main'
+import Main from './screens/Main'
 import { store } from './store/store'
 import { Provider } from 'react-redux'
 
@@ -20,7 +20,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<Main />} />
           <Route path="men" element={<Man />} />
           <Route path="women" element={<Women />} />
           <Route path="about" element={<About />} />
