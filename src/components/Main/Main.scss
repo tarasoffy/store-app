@@ -1,0 +1,30 @@
+.main {
+    display: flex;
+
+    .wrapper-goods {
+        margin: 20px 20px 0 0;
+    }
+
+    img {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .descriptions {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .price {
+        margin-bottom: 20px;
+    }
+
+    .add {
+        border: 1px solid black
+        
+    }
+
+}
+
+
+
