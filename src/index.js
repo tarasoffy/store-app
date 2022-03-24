@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from './screens/Cart'
-import Man from './screens/Men'
+import Men from './screens/Men'
 import Women from './screens/Women'
 import About from './screens/About'
 import Contact from './screens/Contacts'
@@ -21,7 +21,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />
-          <Route path="men" element={<Man />} />
+          <Route path="men" element={<Men />} />
           <Route path="women" element={<Women />} />
           <Route path="about" element={<About />} />
           <Route path="contacts" element={<Contact />} />

@@ -2,10 +2,9 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { counterIncrementCart, counterDecrementCart } from '../../store/cartSlice';
 import { counterDecrement, counterIncrement } from '../../store/goodsSlice'
+import './Counter.scss'
 
 function Counter({ id, counter, component }) {
-
-    console.log(component);
 
     let dispatch = useDispatch()
 
@@ -25,7 +24,7 @@ function Counter({ id, counter, component }) {
     const counterInc = () => {
         switch (component) {
             case "infoGoods":
-                dispatch(counterIncrement(id))
+                dispatch(counterIncrement(id, counter))
                 break;
             case "cart":
                 dispatch(counterIncrementCart(id))
