@@ -9,6 +9,7 @@ import Women from './screens/Women'
 import About from './screens/About'
 import Contact from './screens/Contacts'
 import Main from './screens/Main'
+import Profile from './screens/Profile';
 import { store } from './store/store'
 import { Provider } from 'react-redux'
 
@@ -26,6 +27,7 @@ ReactDOM.render(
           <Route path="about" element={<About />} />
           <Route path="contacts" element={<Contact />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

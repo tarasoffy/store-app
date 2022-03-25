@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../components/Cart/Cart.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import Counter from '../components/Counter'
@@ -30,7 +30,7 @@ function Cart() {
           <button onClick={() => delGoods(item.id)} className='delete'>Удалить</button>
         </div>)
         :
-        <h3>Корзина пустая</h3>}
+        <h3 className='empty-cart'>Корзина пустая</h3>}
     </div>
     </div>
   )

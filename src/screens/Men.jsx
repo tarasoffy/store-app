@@ -11,6 +11,7 @@ function Man() {
 
   return (
     <div className='wrapperGoods'>
+      
       {goods.filter(item => item.sex === 'men')
       .map(item => 
       <div className='wrapper-goods' key={item.id}>
