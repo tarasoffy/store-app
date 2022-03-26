@@ -11,8 +11,6 @@ function Header() {
                     <nav>
                         <NavLink to={"/men"}>Men</NavLink>
                         <NavLink to={"/women"}>Women</NavLink>
-                        <NavLink to={"/about"}>About</NavLink>
-                        <NavLink to={"/contacts"}>Contacts</NavLink>
                     </nav>
                 </div>
                 <div className='wrapper-right'>

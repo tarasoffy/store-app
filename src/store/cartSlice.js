@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
-
 const initialState = {
   cart: []
 }
+
 
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart: (state, {payload}) => {
+    addToCart: (state, { payload }) => {
       let findGoods = state.cart.find(item => item.id === payload.id)
-      if(findGoods) {
+      if (findGoods) {
         let goods = state.cart.find(item => item.id === payload.id);
         goods.counter += payload.counter
         localStorage.setItem('goodsCart', JSON.stringify(state.cart))
@@ -22,19 +22,29 @@ export const cartSlice = createSlice({
       }
     },
 
-    counterDecrementCart: (state, {payload}) => {
+    counterDecrementCart: (state, { payload }) => {
+
       let goods = state.cart.find(item => item.id === payload);
       if (goods.counter !== 1) {
         goods.counter -= 1
-      } else goods.counter = 1
+        localStorage.removeItem('goodsCart');
+        localStorage.setItem('goodsCart', JSON.stringify(state.cart))
+      } else {
+        goods.counter = 1
+        localStorage.removeItem('goodsCart');
+        localStorage.setItem('goodsCart', JSON.stringify(state.cart))
+      }
     },
 
-    counterIncrementCart: (state, {payload}) => {
+    counterIncrementCart: (state, { payload }) => {
       let goods = state.cart.find(item => item.id === payload);
-      goods.counter +=1
+      goods.counter += 1;
+      localStorage.removeItem('goodsCart');
+      localStorage.setItem('goodsCart', JSON.stringify(state.cart))
+      
     },
 
-    deleteGoods: (state, {payload}) => {
+    deleteGoods: (state, { payload }) => {
       let goods = state.cart.filter(item => item.id !== payload)
       state.cart = goods
       let localStorDeleteGoods = JSON.parse(localStorage.getItem('goodsCart'))
