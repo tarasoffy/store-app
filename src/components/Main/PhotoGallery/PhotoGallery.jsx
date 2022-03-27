@@ -1,18 +1,20 @@
-import React from 'react'
+import React from "react";
+import { useDispatch } from "react-redux";
+import "../Main.scss";
+import { show } from "../../../store/goodsSlice";
 
-//дарк, клиар
+function PhotoGallery({ image, id }) {
+  let dispatch = useDispatch();
 
-function PhotoGallery({image}) {
-
-
+  const showPopap = () => {
+    dispatch(show(id));
+  };
 
   return (
-
-        <div className="photo-gallery">
-            <img src={image} alt="sneakers" />
-        </div>
-
-  )
+    <div className="photo-gallery">
+      <img onClick={showPopap} src={image} alt="sneakers" />
+    </div>
+  );
 }
 
-export default PhotoGallery
+export default PhotoGallery;
