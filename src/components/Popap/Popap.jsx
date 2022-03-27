@@ -26,15 +26,17 @@ const Popap = () => {
     <div className="popup-wrapper">
       <div className="popap">
         <div className="close">
-          <button onClick={hideFn}>Закрыть</button>
+          <button onClick={hideFn}>X</button>
         </div>
-        <button onClick={prev}>Prev</button>
-        <div className="image">
-          {galleryPopap.map((item) => (
-            <img src={item} key={Math.random()} />
-          ))}
+        <div className="wrapper-img">
+          <button onClick={prev}>Prev</button>
+          <div className="image">
+            {galleryPopap.map((item) => (
+              <img src={item} key={Math.random()} />
+            ))}
+          </div>
+          <button onClick={next}>Next</button>
         </div>
-        <button onClick={next}>Next</button>
         <div className="gallery"></div>
       </div>
     </div>
